@@ -1,0 +1,262 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+
+:root {
+
+    --dk-violet: hsl(268, 75%, 9%);
+    --lt-violet: hsl(268, 47%, 21%);
+    --lt-violet2: hsl(281, 89%, 26%);
+    --vb-violet: hsl(285, 91%, 52%);
+    --vb-violet2: hsl(290, 70%, 36%);
+  
+    --vb-yellow: hsl(52, 100%, 62%);
+  
+  
+    --pl-white: hsl(0, 0%, 100%);
+  
+    --vb-cyan: hsl(176, 100%, 44%);
+    --vb-cyan2: hsl(177, 92%, 70%);
+    --dk-text: hsl(198, 20%, 13%);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(135deg, rgba(24,23,51,1) 20%, rgba(88,23,34,1) 100%);
+
+}
+
+.wrapper{
+    width: 90%;
+    max-width: 450px;
+}
+
+h1 {
+    font-size: 2.3rem; /* Adjust size as needed */
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    opacity: 0.65;
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 1rem;
+}
+
+.display-container{
+    position: relative;
+    background-color: var(--dk-violet);
+    border-radius: 1rem;
+    border-bottom: 0.35rem solid #154284;
+    margin-top: 1rem 0;
+    padding-top: 0.35rem;
+}
+
+.data-passwordDisplay{
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 1.15rem 1rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 30px;
+    letter-spacing: 1px;
+    padding-right: 3.25rem;
+    border: none;
+    color: #AD822B;
+}
+
+.data-passwordDisplay::placeholder{
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    line-height: 30ox;
+    color: #FDC52C;
+    opacity: 0.65;
+    text-transform: uppercase;
+}
+
+.data-copy{
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: grab;
+}
+
+
+
+.data-copyMsg{
+    position: absolute;
+    background-color: #154284;
+    color: #160628;
+    font-size: 1.25rem;
+    top: -35px;
+    left: -25px;
+    padding: 5px 10px;
+    border-radius: 1rem;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: bottom;
+    transition: all 250ms ease-in-out;
+}
+
+
+.data-copyMsg.active{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.input-container{
+    width: 100%;
+    background-color: var(--dk-violet);
+    border-radius: 1rem;
+    padding: 2rem;
+    border-bottom: 0.35rem solid #154284;
+    margin-top: 1rem;
+}
+
+.length-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.length-container p:nth-child(1) {
+    color: white;
+    font-size: 1.5rem;
+    opacity: 0.65;
+}
+
+.length-container p:nth-child(2) {
+    color: #FDC52C;
+    font-size: 1.5rem;
+    opacity: 0.65;
+    font-weight: bold;
+}
+
+.strength-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.strength-container p{
+    color: white;
+    opacity: 0.65;
+    font-size: 1.5rem;
+}
+
+.data-indicator{
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+} 
+
+.generateButton{
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+    border-radius: 0.75rem;
+    border-bottom: 0.35rem solid #154284;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #FDC52C;
+    opacity: 0.65;
+    font-weight: 600;
+    font-size: 1.25rem;
+    background-color: #C4132A;
+    cursor: pointer;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.check{
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    gap: 0 1rem;
+}
+
+.check input{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #154284;
+    cursor: pointer;
+    position: relative;
+    border-radius: 50%;
+}
+
+.check input:checked{
+    background-color: #880E29;
+    border: none;
+}
+
+.check input:checked::before{
+    content:  '⚽︎';
+    position: absolute;
+    font-size: 1.7rem;
+    font-weight: bolder;
+    left: -15%;
+    top: -10px;
+}
+
+.check label{
+    color: #FDC52C;
+    font-size: 1.25rem;
+    letter-spacing: 0.75px;
+    opacity: 0.65;
+}
+ 
+/* Custom Range Slider */
+.data-lengthSlider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #A50044 0%, #004D98 100%);
+    outline: none;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+    cursor: pointer;
+    margin: 30px 0;
+}
+
+/* Custom Thumb */
+.data-lengthSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    background: url('https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png') center/cover no-repeat;
+    cursor: pointer;
+    margin-top: 3px;
+    /* border-radius: 50%;  */
+    /* border: 2px solid black; */
+    /* box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5); */
+}
+
+/* .data-lengthSlider:focus{
+    outline: 1px solid #FDC52C;
+} */
